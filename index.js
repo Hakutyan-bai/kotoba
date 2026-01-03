@@ -23,17 +23,6 @@ const getHitokotoList = () => {
   }
 };
 
-// 添加新的一言
-const addHitokoto = (text) => {
-  try {
-    fs.appendFileSync(getFilePath(), `\n${text}`, 'utf-8');
-    return true;
-  } catch (error) {
-    console.error('添加失败:', error);
-    return false;
-  }
-};
-
 // 首页
 app.get('/', (req, res) => {
   res.send(`
@@ -54,21 +43,6 @@ app.get('/api', (req, res) => {
   
   const randomIndex = Math.floor(Math.random() * list.length);
   res.send(list[randomIndex]);
-});
-
-// 添加新的一言
-app.post('/api/add', (req, res) => {
-  const { text } = req.body;
-  
-  if (!text || !text.trim()) {
-    return res.status(400).send('错误: 请提供 text 参数');
-  }
-  
-  if (addHitokoto(text.trim())) {
-    res.send('添加成功');
-  } else {
-    res.status(500).send('添加失败');
-  }
 });
 
 // 启动服务
