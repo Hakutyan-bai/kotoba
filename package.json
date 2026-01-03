@@ -3,12 +3,7 @@
   "version": "1.0.0",
   "description": "简单的一言API服务，部署在Vercel",
   "main": "api/index.js",
-  "scripts": {
-    "start": "vercel dev",
-    "dev": "vercel dev",
-    "build": "echo 'No build step required'",
-    "deploy": "vercel"
-  },
+  "scripts": {},
   "keywords": ["hitokoto", "api", "vercel", "serverless"],
   "author": "",
   "license": "MIT",
@@ -17,6 +12,6 @@
     "vercel": "^28.0.0"
   },
   "engines": {
-    "node": ">=16.x"
+    "node": ">=18.x"
   }
 }

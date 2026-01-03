@@ -15,7 +15,7 @@ const getHitokotoList = () => {
   }
 };
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   // 设置 CORS 头
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -52,4 +52,4 @@ export default function handler(req, res) {
   } else {
     res.status(405).json({ error: '不支持的请求方法' });
   }
-}
+};

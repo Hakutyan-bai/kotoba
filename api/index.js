@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   // 设置 CORS 头
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
@@ -84,15 +84,10 @@ export default function handler(req, res) {
           <a href="/api/hitokoto" class="demo-button">试试看</a>
         </div>
 
-        <div class="api-item">
-          <h3>POST /api/hitokoto</h3>
-          <p>添加新的一言</p>
-          <p>参数: <code>text</code> - 要添加的一言内容</p>
-        </div>
+
 
         <div style="text-align: center; margin-top: 40px; color: #888;">
           <p>一个简单的一言API服务</p>
-          <p>部署在 Vercel 上</p>
         </div>
       </div>
     </body>
